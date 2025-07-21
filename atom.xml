@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yjh965.github.io</id>
     <title>菜王的 blog</title>
-    <updated>2025-07-12T17:09:13.125Z</updated>
+    <updated>2025-07-21T14:40:49.584Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yjh965.github.io"/>
     <link rel="self" href="https://yjh965.github.io/atom.xml"/>
@@ -17,6 +17,8 @@
         </link>
         <updated>2025-07-12T17:08:08.000Z</updated>
         <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://yjh965.github.io/post-images/1752340105910.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://yjh965.github.io/post-images/1753108810753.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://yjh965.github.io/post-images/1753108826136.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
