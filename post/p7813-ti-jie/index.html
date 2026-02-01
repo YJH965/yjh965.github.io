@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>P7813 题解 | 菜王的 blog</title>
+<meta name="description" content="菜">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://yjh965.github.io/favicon.ico?v=1769938565157">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://yjh965.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://yjh965.github.io">
+        <img class="avatar" src="https://yjh965.github.io/images/avatar.png?v=1769938565157" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://yjh965.github.io">
+        <h1 class="site-title">菜王的 blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://YJH965.github.io" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://YJH965.github.io/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://www.luogu.com.cn/user/477443" class="menu" target="_blank">
+            My Luogu
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://codeforces.com/profile/YuJiahe" class="menu" target="_blank">
+            My CodeForces
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://atcoder.jp/users/YuJiahe" class="menu" target="_blank">
+            My AtCoder
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">P7813 题解</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2023-04-16</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://yjh965.github.io/tag/snS5DT8z2/">
+                    杂物
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://yjh965.github.io/tag/LQ0w-t_P69/">
+                    题解
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <h1 id="思路">思路</h1>
+<p><code>__int128</code> 大法好！<s>但是圈钱基金会不给用……</s></p>
+<p>Py 大法好！<s>但是圈钱基金会也不给用……</s></p>
+<p>但是，洛谷可以用啊！</p>
+<p><code>long long</code> 可以写成 <code>__int64</code>，大概相当于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>18</mn></msup></mrow><annotation encoding="application/x-tex">10^{18}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span></span>；而 <code>__int128</code> 的存储范围相当于 <code>long long</code> 的平方，也就是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>36</mn></msup></mrow><annotation encoding="application/x-tex">10^{36}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span>。</p>
+<p>如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span>，则右下角的数大概为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>18</mn></msup></mrow><annotation encoding="application/x-tex">10^{18}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span></span>，则所有数的和也达不到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>36</mn></msup></mrow><annotation encoding="application/x-tex">10^{36}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span>，这不就是为 <code>__int128</code> 量身定制的吗？</p>
+<p>而且，题目里有一句话：</p>
+<blockquote>
+<p>对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">100\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的数据：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>T</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">1\le T\le 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span>，<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mstyle mathcolor="red"><mfrac><mrow><mi>K</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac><mo>≤</mo><mi>N</mi><mstyle mathcolor="black"><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup></mstyle></mstyle></mrow><annotation encoding="application/x-tex">1\le\color{red}\dfrac{K+1}2\le N\color{black} \le 10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.04633em;vertical-align:-0.686em;"></span><span class="mord" style="color:red;"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="color:red;">2</span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="color:red;border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="color:red;"><span class="mord mathdefault" style="margin-right:0.07153em;color:red;">K</span><span class="mspace" style="color:red;margin-right:0.2222222222222222em;"></span><span class="mbin" style="color:red;">+</span><span class="mspace" style="color:red;margin-right:0.2222222222222222em;"></span><span class="mord" style="color:red;">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel" style="color:red;">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;color:red;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel" style="color:black;">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord" style="color:black;">1</span><span class="mord" style="color:black;"><span class="mord" style="color:black;">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style="color:black;"><span class="mord mtight" style="color:black;">9</span></span></span></span></span></span></span></span></span></span></span>。</p>
+</blockquote>
+<p>看到标红的部分了吗？这代表我们最多只需要经过最后两行！</p>
+<p>所以，我们求出倒数第二行要经过的个数和倒数第一行要经过的个数，用等差数列求和公式直接求解即可。</p>
+<p>还有一点，<code>__int128</code> 需要手写输入输出函数，这个不难，很好实现。</p>
+<h1 id="代码">代码</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;stack&gt;
+
+using namespace std;
+
+__int128 ans, ks, _1, _2;
+unsigned long long t, n, k; // 输入不需要使用 __int128，不需要手写输入。
+bool ss;
+void out(__int128 s){
+	stack&lt;int&gt; st;
+	while (s){
+		st.push(int(s % 10));
+		s /= 10;
+	}
+	while (st.size()){
+		cout &lt;&lt; st.top(); // 按位逆序输出
+		st.pop();
+	}
+	cout &lt;&lt; endl;
+}
+int main(){
+	cin &gt;&gt; t;
+	while (t --){
+		cin &gt;&gt; n &gt;&gt; k;
+		ss = k % 2;
+		k /= 2;
+		ks = n * (n + 1) / 2;
+		_1 = (ks * 2 - k + 1) * k / 2; // 倒数第一行的和
+		_2 = ((ks - n) * 2 - k + 1) * k / 2; // 倒数第二行的和
+		ans = _1 + _2;
+		if (ss) ans += ks - k; // 若无法整除，则加上最后一行从右往左数第 k 个
+		out(ans % 1000000007); // 输出
+	}
+}
+</code></pre>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://yjh965.github.io/post/swtr-07-spider-solitaire-ti-jie/">
+              <h3 class="post-title">
+                下一篇：「SWTR-07」Spider Solitaire 题解
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">菜</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://yjh965.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>GDOI2024 游记 | 菜王的 blog</title>
+<meta name="description" content="菜">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://yjh965.github.io/favicon.ico?v=1769938565157">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://yjh965.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://yjh965.github.io">
+        <img class="avatar" src="https://yjh965.github.io/images/avatar.png?v=1769938565157" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://yjh965.github.io">
+        <h1 class="site-title">菜王的 blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://YJH965.github.io" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://YJH965.github.io/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://www.luogu.com.cn/user/477443" class="menu" target="_blank">
+            My Luogu
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://codeforces.com/profile/YuJiahe" class="menu" target="_blank">
+            My CodeForces
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://atcoder.jp/users/YuJiahe" class="menu" target="_blank">
+            My AtCoder
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">GDOI2024 游记</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2024-03-07</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://yjh965.github.io/tag/snS5DT8z2/">
+                    杂物
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://yjh965.github.io/tag/ptLIve9r98/">
+                    邮寄
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <h1 id="gdoi2024-游记">GDOI2024 游记</h1>
+<p>背景：没参加 NOIP，目标是省选上队线。</p>
+<h2 id="day-3">Day -3</h2>
+<p>湖北模拟 Day1，T1 T2 傻杯题，2h 写完，T3 写了个暴力之后猜到正解结论，不带修的 65pts 没调出来，结果 T1 数组开小了挂了 15pts，最终 85+100+15=200，洛谷 rk16，被 ss 三个队爷吊打。</p>
+<h2 id="day-2">Day -2</h2>
+<p>湖北模拟 Day2，T1 T2 傻杯题，3.5h 写完，T3 写了个 cheat 还挂了，最终 100+100+27=227，洛谷并列 rk17，被 ss 两个队爷吊打。</p>
+<p>因为有些人没有都打，洛谷总分 rk13。</p>
+<h2 id="day-1">Day -1</h2>
+<p>打模拟赛，但是一直在摆。</p>
+<h2 id="day-0">Day 0</h2>
+<p>上午摆，下午坐车去东莞，路上一直在摆，试完机回酒店继续摆。</p>
+<p>以下是赛时过程。</p>
+<hr>
+<h2 id="day-1-2">Day 1</h2>
+<p>因为 D1T1 大概率是签到题，所以打算开局快速写出来。</p>
+<p>实际上比去年 D1T1 麻烦的多，想 + 写用了 1h，没怎么调就过了，感觉<strong>有点赢<sup>[1]</sup></strong>。感觉常数有点大，把 T2 的快读加上去了，然后又检查了一下。应该弄到了开赛 1.5h。</p>
+<p>D1T2 一眼二分，结果发现数据范围应该是特意对着 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><msup><mi>k</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nk^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 卡的，可能只有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>32</mn><mo>∼</mo><mn>72</mn></mrow><annotation encoding="application/x-tex">32 \sim 72</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">7</span><span class="mord">2</span></span></span></span> 分，大概率要拼特殊性质。</p>
+<p>为了防止简单题藏在后面，想了 0.5h D1T3，没有一点头猪。</p>
+<p>又仔细想了一下 D1T2，发现二分是不太能去掉的，所以可以把二分和 check 放一起，就可以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nk)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span> 了。</p>
+<p>秉承着”我会的，大家肯定都会“原则，我还是决定去冲一下 D1T2 正解，因为感觉**队线就是这个题区分的<sup>[2]</sup>**了。想清楚细节之后还剩 1.5h 直接开冲，结果写完之后就只剩 10min 了。当然是没有调出来，喜提 0pts。</p>
+<p>D1 总分 100+0+0=100，<strong>非常输<sup>[1]</sup></strong>。</p>
+<p>出来跟大家交流了一下，发现只有 drj 会 D1T2，而<strong>队线只有 160 左右<sup>[2]</sup></strong>。dzy <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><msup><mi>k</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nk^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 剪枝大样例只跑了 0.7s，云斗也过了，非常愤怒，希望官方数据能有<strong>正义制裁<sup>[3]</sup></strong>。</p>
+<h2 id="day-2-2">Day 2</h2>
+<p>D1T1 和 D1T3 都是神秘博弈，但是 D1T2 是我最喜欢的 counting，所以果断开了 D1T2。</p>
+<p>1.5h 想+写，弄完之后发现假了，但是能过特殊性质 B 和竞赛图，应该有一些分。</p>
+<p>想了一下发现会了一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mn>3</mn><mi>n</mi></msup><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(3^nn^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 的做法，但是一堆点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>≤</mo><mn>14</mn></mrow><annotation encoding="application/x-tex">n \le 14</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">4</span></span></span></span>，摁了个计算器<strong>感觉 1e9 过不去 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>14</mn></mrow><annotation encoding="application/x-tex">n = 14</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">4</span></span></span></span><sup>[4]</sup>，和暴力分数差不多<sup>[5]</sup></strong>。当时感觉正解就是子集卷积 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mn>2</mn><mi>n</mi></msup><mo>×</mo><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">y</mi></mrow><mo>(</mo><mi>n</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(2^n \times \mathrm{poly}(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">p</span><span class="mord mathrm">o</span><span class="mord mathrm">l</span><span class="mord mathrm" style="margin-right:0.01389em;">y</span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span>，果断熔断去看 T1 了。</p>
+<p>T1 想了一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mn>4</mn><mi>n</mi></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(4^n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord">4</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 做法，感觉 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mn>2</mn><mi>n</mi></msup><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(2^nn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> 应该也差不多，而且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mn>4</mn><mi>n</mi></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(4^n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord">4</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 有 75pts，所以就先写了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mn>4</mn><mi>n</mi></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(4^n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord">4</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>。<strong>预期 1h 弄完<sup>[6]</sup></strong>，结果<strong>直接调到了最后 10min 才调出来<sup>[6]</sup></strong>，只剩 10min 根本就不敢动电脑了。</p>
+<p>D2 总分 75+40+0=115，怎么比 D1 高呢？</p>
+<p>出来跟大家交流了一下，发现 drj D2T2 写了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mn>3</mn><mi>n</mi></msup><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(3^nn^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>，<strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>14</mn></mrow><annotation encoding="application/x-tex">n = 14</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">4</span></span></span></span> 大样例只跑了 0.7s<sup>[4]</sup>，应该是有 90pts 了<sup>[5]</sup></strong>。kdr T3 有不少分，希望他能进队吧。</p>
+<hr>
+<p>以上是赛时过程。</p>
+<p>熨斗成绩是 100+0+0+75+40+0=215，非常扭曲，观察了一下好像只有我一个六题只有三题有分的。</p>
+<h2 id="day-6">Day 6</h2>
+<p>官方数据出了。</p>
+<p><strong>dzy D1T2 官方数据 72pts<sup>[3]</sup></strong>，制裁来了。</p>
+<p>我官方数据和云斗一样，没啥好说的。</p>
+<p>本校有三个队，拜谢 4:56 的三位学长。</p>
+<h2 id="总结反思">总结&amp;反思</h2>
+<p>其实如果能把想到的东西都写出来的话，应该是有 100+100+?+100+90+?&gt;=390 的，是 A 队水平，但是这又有什么用呢。</p>
+<p>drj 说我有成为他的潜力，但愿如此吧。</p>
+<p>代码能力还是过于低了，在侧重点为代码实现的 CNOI 里还是会吃不少亏。</p>
+<p>打的还是太激进了，模拟赛要多练，最好能多做一些细节题，大 DS 之类的。</p>
+<p>应该是到了回归文化课的时间了，今年就先不能和大家相聚重庆了，明年再见！</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://yjh965.github.io/post/gdkoi2023-ti-gao-zu-cuo-pai-ti-jie/">
+              <h3 class="post-title">
+                下一篇：[GDKOI2023 提高组] 错排 题解
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">菜</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://yjh965.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>JT 的题 | 菜王的 blog</title>
+<meta name="description" content="菜">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://yjh965.github.io/favicon.ico?v=1769938565157">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://yjh965.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://yjh965.github.io">
+        <img class="avatar" src="https://yjh965.github.io/images/avatar.png?v=1769938565157" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://yjh965.github.io">
+        <h1 class="site-title">菜王的 blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://YJH965.github.io" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://YJH965.github.io/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://www.luogu.com.cn/user/477443" class="menu" target="_blank">
+            My Luogu
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://codeforces.com/profile/YuJiahe" class="menu" target="_blank">
+            My CodeForces
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://atcoder.jp/users/YuJiahe" class="menu" target="_blank">
+            My AtCoder
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">JT 的题</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2024-04-15</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://yjh965.github.io/tag/snS5DT8z2/">
+                    杂物
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>我的题目合集。【】中两个以空格分隔的 1~10 的数字，前面是质量，后面是难度。</p>
+<h2 id="校内模拟赛">校内模拟赛</h2>
+<h3 id="普及组模拟赛">普及组模拟赛</h3>
+<ul>
+<li><a href="http://oiclass.com/p/3026">QWQ</a>【4 1】简单构造。</li>
+<li><a href="http://oiclass.com/p/3027">最小值</a>【4 2】拆贡献。</li>
+<li><a href="http://oiclass.com/p/3028">子段和</a>【2 3】前缀和，哈希表。</li>
+<li><a href="http://oiclass.com/p/3029">求数组</a>【5 3】数学推理 / 二分。</li>
+</ul>
+<h3 id="普转提模拟赛">普转提模拟赛</h3>
+<ul>
+<li><a href="http://oiclass.com/p/3058">K Sum</a>【4 2】简单推柿子。</li>
+<li><a href="http://oiclass.com/p/3059">Sum of Good Numbers</a>【5 3】拆贡献，递推 / 快速幂。</li>
+<li><a href="http://oiclass.com/p/3060">Single Source Shortest Path</a>【5 3】断环成链，简单 dp。</li>
+<li><a href="http://oiclass.com/p/3061">Dancing Line</a>【5 4】诈骗题意，简单背包。</li>
+</ul>
+<p>这两场都挺唐的。</p>
+<h3 id="与-tiantian2008-一起出的普及组模拟赛">与 TianTian2008 一起出的普及组模拟赛</h3>
+<p>这是 T3，T4。还有，这场比较超纲了。</p>
+<ul>
+<li><a href="http://oiclass.com/d/puji/p/A0015">操作（operation）</a>【7 5】小清新线段树，有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n \log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> 版本。</li>
+<li><a href="http://oiclass.com/d/puji/p/A0016">燃烧（burn）</a>【5 5】拆贡献 / 树形 dp。</li>
+</ul>
+<h3 id="普及组模拟赛-2">普及组模拟赛</h3>
+<ul>
+<li><a href="http://oiclass.com/d/puji/p/863">水题</a>【6 2】小分讨，CF-style。</li>
+<li><a href="http://oiclass.com/d/puji/p/864">烂题</a>【4 2】有些诈骗的题。</li>
+<li><a href="http://oiclass.com/d/puji/p/865">典题</a>【7 4】小分讨 + 构造 + 诈骗，CF-style。</li>
+</ul>
+<p>T4 搬了 AT_arc158_c 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>v</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n \log v)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span> 加强版。</p>
+<p>这场出（组）难了，且题目风格比较 CF。</p>
+<h3 id="noip-模拟赛">NOIP 模拟赛</h3>
+<ul>
+<li><a href="http://oiclass.com/d/tigao/p/821">Triple</a>【5 3】其实是 <a href="https://fjzzq2002.github.io/cpideas/">CP Ideas</a> 随的 idea 里面翻出来的。小清新扫描线，BIT 简单维护就行了。</li>
+<li><a href="http://oiclass.com/d/tigao/p/822">Traversal</a>【6 6】有点大的分讨 + counting，个人挺喜欢的。赛时 @LC_535 打表过了，难过。有一个 case 后来在 bijective proof problems 里面发现了。</li>
+<li><a href="http://oiclass.com/d/tigao/p/823">DESTRUCTION 3,2,1</a>【8 9】大分讨构造题。后来发现撞了<a href="https://qoj.ac/contest/530/problem/864">这个</a>。好像是一场 ptz camp 里的压轴题？那我可太有实力了吧。要是没撞就好了，愤怒。@LC_535 顺便把这个题也打表过了，有点强。</li>
+</ul>
+<p>T4 搬了<a href="https://codeforces.com/gym/102412/problem/J">这个</a>。值得一提的是，T3 和 T4 后来都被 PJudge 搬了。感觉自己非常有眼光。</p>
+<p>这场也出（组）难了。感觉有些题浪费了，反倒没有起到模拟效果。</p>
+<h3 id="noip-模拟赛-2">NOIP 模拟赛 2</h3>
+<ul>
+<li><a href="https://oiclass.com/d/tigao/p/1176">114514</a>【6 3】比较简单的 dsu + 乘法原理。</li>
+<li><a href="https://oiclass.com/d/tigao/p/1179">终末螺旋</a>【7 8】异或哈希 + ds 维护。是<a href="https://codeforces.com/problemset/problem/1914/G2">这个</a>的带修版。</li>
+</ul>
+<p>T2 T3 搬了神秘来源的题。</p>
+<h2 id="公开赛">公开赛</h2>
+<h3 id="feoi-round-1">FeOI Round 1</h3>
+<ul>
+<li>
+<p><a href="https://www.luogu.com.cn/problem/P10887">再演</a>【8 6】小清新交互题。</p>
+</li>
+<li>
+<p><a href="https://www.luogu.com.cn/problem/P10888">醒餞の鳥 (feat. Feryquitous)</a>【8 8】根号分治 + 小 trick 题。可惜场上一堆 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>m</mi><msqrt><mrow><mi>n</mi><mi>m</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mi>m</mi></mrow></msqrt><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nm \sqrt{nm \log nm})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.085em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord mathdefault">m</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.835em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">n</span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">m</span></span></span><span style="top:-2.795em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.20500000000000007em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 草过去了。被 A_zjzj 给了好评，开心。</p>
+</li>
+</ul>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://yjh965.github.io/post/bijective-proof-xuan-zuo/">
+              <h3 class="post-title">
+                下一篇：Bijective Proof 选做
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">菜</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://yjh965.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>整体二分学习笔记 | 菜王的 blog</title>
+<meta name="description" content="菜">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://yjh965.github.io/favicon.ico?v=1769938565157">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://yjh965.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://yjh965.github.io">
+        <img class="avatar" src="https://yjh965.github.io/images/avatar.png?v=1769938565157" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://yjh965.github.io">
+        <h1 class="site-title">菜王的 blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://YJH965.github.io" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://YJH965.github.io/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://www.luogu.com.cn/user/477443" class="menu" target="_blank">
+            My Luogu
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://codeforces.com/profile/YuJiahe" class="menu" target="_blank">
+            My CodeForces
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://atcoder.jp/users/YuJiahe" class="menu" target="_blank">
+            My AtCoder
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">整体二分学习笔记</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2023-04-16</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://yjh965.github.io/tag/FOcb_P3jId/">
+                    学习笔记
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>前置知识：分治，二分。</p>
+<h1 id="整体二分">整体二分</h1>
+<p>整体二分，顾名思义就是将很多询问同时进行二分。</p>
+<p>具体来说，设函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">solve</mi><mo>⁡</mo><mo>(</mo><mi>S</mi><mo separator="true">,</mo><mi>L</mi><mo separator="true">,</mo><mi>R</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\operatorname{solve}(S, L, R)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mord mathrm">s</span><span class="mord mathrm">o</span><span class="mord mathrm">l</span><span class="mord mathrm" style="margin-right:0.01389em;">v</span><span class="mord mathrm">e</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">L</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mclose">)</span></span></span></span> 为现在正在处理询问序列 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span> 里的询问，答案值域为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>L</mi><mo separator="true">,</mo><mi>R</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[L, R]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault">L</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mclose">]</span></span></span></span>。</p>
+<ol>
+<li>
+<p>如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span> 为空，直接返回。</p>
+</li>
+<li>
+<p>如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">L = R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span>，将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span> 里的每一个询问的答案都赋为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span></span></span></span>（或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span>），然后返回。</p>
+</li>
+<li>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>i</mi><mi>d</mi><mo>=</mo><mrow><mo fence="true">⌊</mo><mfrac><mrow><mi>L</mi><mo>+</mo><mi>R</mi></mrow><mn>2</mn></mfrac><mo fence="true">⌋</mo></mrow></mrow><annotation encoding="application/x-tex">mid = \left\lfloor\dfrac{L + R}{2}\right\rfloor</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">⌊</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">L</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">⌋</span></span></span></span></span></span>，对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span> 里的每一个询问，根据 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">check</mi><mo>⁡</mo><mo>(</mo><mi>m</mi><mi>i</mi><mi>d</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\operatorname{check}(mid)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mord mathrm">c</span><span class="mord mathrm">h</span><span class="mord mathrm">e</span><span class="mord mathrm">c</span><span class="mord mathrm">k</span></span><span class="mopen">(</span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mclose">)</span></span></span></span> 的结果，来将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span> 分为两个集合 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">LS</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">RS</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span>。</p>
+</li>
+<li>
+<p>递归处理 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">solve</mi><mo>⁡</mo><mo>(</mo><mi>L</mi><mi>S</mi><mo separator="true">,</mo><mi>L</mi><mo separator="true">,</mo><mi>m</mi><mi>i</mi><mi>d</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\operatorname{solve}(LS, L, mid)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mord mathrm">s</span><span class="mord mathrm">o</span><span class="mord mathrm">l</span><span class="mord mathrm" style="margin-right:0.01389em;">v</span><span class="mord mathrm">e</span></span><span class="mopen">(</span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">L</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mclose">)</span></span></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">solve</mi><mo>⁡</mo><mo>(</mo><mi>R</mi><mi>S</mi><mo separator="true">,</mo><mi>m</mi><mi>i</mi><mi>d</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mi>R</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\operatorname{solve}(RS, mid + 1, R)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mord mathrm">s</span><span class="mord mathrm">o</span><span class="mord mathrm">l</span><span class="mord mathrm" style="margin-right:0.01389em;">v</span><span class="mord mathrm">e</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mclose">)</span></span></span></span>。</p>
+</li>
+</ol>
+<p><a href="https://www.luogu.com.cn/problem/P3834">模板题</a>代码：</p>
+<pre><code class="language-cpp">#include &lt;algorithm&gt;
+#include &lt;cstdio&gt;
+inline int lowbit(int x){return x &amp; -x;}
+struct que{
+	int op, l, r, k, id;
+}q[400001], lq[400001], rq[400001];
+int l, tr[200001];
+void add(int p, int x){
+	while (p &lt;= l) tr[p] += x, p += lowbit(p);
+}
+int query(int p){
+	int ans = 0;
+	while (p) ans += tr[p], p -= lowbit(p);
+	return ans;
+}
+
+using namespace std;
+
+int n, m, a[200001], _, b[200001], ans[200001];
+void solve(int l, int r, int L, int R){
+	if (l &gt; r) return;
+	if (L == R){
+		for (int i = l;i &lt;= r;i ++){
+			if (q[i].op == 2) ans[q[i].id] = L;
+		}
+		return;
+	}
+	int mid = L + R &gt;&gt; 1, lt = 0, rt = 0;
+	for (int i = l;i &lt;= r;i ++){
+		if (q[i].op == 1){
+			if (q[i].r &lt;= mid) add(q[i].k, 1), lq[++ lt] = q[i];
+			else rq[++ rt] = q[i];
+		}
+		else {
+			int cnt = query(q[i].r) - query(q[i].l - 1);
+			if (q[i].k &lt;= cnt) lq[++ lt] = q[i];
+			else rq[++ rt] = q[i], rq[rt].k -= cnt;
+		}
+	}
+	for (int i = l;i &lt;= r;i ++){
+		if (q[i].op == 1 &amp;&amp; q[i].r &lt;= mid) add(q[i].k, -1);
+	}
+	for (int i = 1;i &lt;= lt;i ++) q[l + i - 1] = lq[i];
+	for (int i = 1;i &lt;= rt;i ++) q[l + lt + i - 1] = rq[i];
+	solve(l, l + lt - 1, L, mid), solve(l + lt, r, mid + 1, R);
+}
+int main(){
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;m), l = n, m += n;
+	for (int i = 1;i &lt;= n;i ++) scanf(&quot;%d&quot;, &amp;a[i]), b[++ _] = a[i];
+	sort(b + 1, b + _ + 1);
+	_ = unique(b + 1, b + _ + 1) - b - 1;
+	for (int i = 1;i &lt;= n;i ++) a[i] = lower_bound(b + 1, b + _ + 1, a[i]) - b;
+	for (int i = 1;i &lt;= n;i ++) q[i].r = a[i], q[i].k = i, q[i].op = 1, q[i].id = 0;
+	for (int i = n + 1;i &lt;= m;i ++) q[i].op = 2, scanf(&quot;%d%d%d&quot;, &amp;q[i].l, &amp;q[i].r, &amp;q[i].k), q[i].id = i - n;
+	solve(1, m, 1, _);
+	for (int i = 1;i &lt;= m - n;i ++) printf(&quot;%d\n&quot;, b[ans[i]]);
+}
+</code></pre>
+<h1 id="例题">例题</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1527">[国家集训队] 矩阵乘法</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P3332">[ZJOI2013] K 大数查询</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P3527">[POI2011] MET-Meteors</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P4602">[CTSC2018] 混合果汁</a></p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://yjh965.github.io/post/dp-de-ji-qiao-zheng-li/">
+              <h3 class="post-title">
+                下一篇：DP 的技巧整理
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">菜</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://yjh965.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

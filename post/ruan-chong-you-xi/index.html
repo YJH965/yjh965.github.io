@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>蠕虫游戏 | 菜王的 blog</title>
+<meta name="description" content="菜">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://yjh965.github.io/favicon.ico?v=1769938565157">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://yjh965.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://yjh965.github.io">
+        <img class="avatar" src="https://yjh965.github.io/images/avatar.png?v=1769938565157" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://yjh965.github.io">
+        <h1 class="site-title">菜王的 blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://YJH965.github.io" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://YJH965.github.io/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://www.luogu.com.cn/user/477443" class="menu" target="_blank">
+            My Luogu
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://codeforces.com/profile/YuJiahe" class="menu" target="_blank">
+            My CodeForces
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://atcoder.jp/users/YuJiahe" class="menu" target="_blank">
+            My AtCoder
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">蠕虫游戏</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2023-04-16</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://yjh965.github.io/tag/snS5DT8z2/">
+                    杂物
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://yjh965.github.io/tag/LQ0w-t_P69/">
+                    题解
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>本蒟蒻的第三篇题解！</p>
+<h1 id="题目传送门">题目传送门</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1815">P1815</a></p>
+<h1 id="解法">解法</h1>
+<p>巨简单的一道模拟题。<s>（我才不会告诉你我卡了五次才对呢）</s></p>
+<p>虽然可以直接按照题意模拟，但是我们可以使用一个技巧：</p>
+<p>每次把蠕虫的尾巴丢到它的头前面。</p>
+<p>使用这个方法，模拟起来较简单，还可以节省时间。</p>
+<p>为什么可以这样做呢？来，我们上图。</p>
+<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/qy5jsbf3.png" alt="" loading="lazy"></figure>
+<p>如图，模拟一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mo>∗</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">4*4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> 的棋盘，和一条长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> 的蠕虫，头在最右边。</p>
+<p>我们往南移之后，会变成这样：</p>
+<figure data-type="image" tabindex="2"><img src="https://cdn.luogu.com.cn/upload/image_hosting/ig5tihv7.png" alt="" loading="lazy"></figure>
+<p>正常模拟是一个一个身体地移动，但是，你会发现，这就相当于把尾巴丢到头部的南边，再把尾巴变成新的头。（东、西、北同理）</p>
+<p>题目里面有一句话，大家都可能会有些不了解：蠕虫的头能移动到虫尾刚刚让出的空格。</p>
+<p>我给你们举个例子就明白了：</p>
+<figure data-type="image" tabindex="3"><img src="https://cdn.luogu.com.cn/upload/image_hosting/rf5hx2h6.png" alt="" loading="lazy"></figure>
+<p>（黄色的是虫头，箭头是虫子要移动的方向）</p>
+<p>就像这样，虫子像指定方向移动时，虫尾就会刚好让出一个空格，虫头就可以移到空格上。</p>
+<p>然后就变成了这样：</p>
+<figure data-type="image" tabindex="4"><img src="https://cdn.luogu.com.cn/upload/image_hosting/q17hprfl.png" alt="" loading="lazy"></figure>
+<p>如果我们用刚刚的方法，就应该把虫尾丢到虫头前面，也就是原来的位置，再把它变成虫头，你就会发现，这样完全没问题，还不用考虑移动和检查的顺序。（具体的实现在代码中）</p>
+<p>打代码的时候，要注意的有几点：</p>
+<ol>
+<li>
+<p>建议将每一个过程单独定义一个函数，方便 debug。</p>
+</li>
+<li>
+<p>判断是否超出边界的时候很容易被坑（详见下方我的代码）</p>
+</li>
+<li>
+<p>判断相撞的时候根本不用开二维数组，只需要把头部坐标和其他的身体坐标进行比较就行了，也不需要把身体和身体进行比较。</p>
+</li>
+<li>
+<p>判断相撞和出界的时候，不用管身体，因为，<strong>身体走过的地方，头都在之前走过了。</strong></p>
+</li>
+</ol>
+<h1 id="代码">代码</h1>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+#define str string
+
+using namespace std;
+
+int n, mx[4] = {1, -1, 0, 0}, my[4] = {0, 0, -1, 1}, chk;
+str st;
+char c;
+struct node{ // 一截身体
+	int x, y;
+	bool operator==(const node &amp;a){
+		return x == a.x &amp;&amp; y == a.y; // 等于号的重载，判断坐标是否重合
+	}
+}s[20]; // 定义蠕虫，头是 s[0]，尾是 s[19]
+void start(){ // 身体初始化
+	for (int i = 0;i &lt; 20;i ++) s[i].y = 25, s[i].x = 30 - i;
+}
+void move(int t){ // 移动
+	s[19].x = s[0].x + mx[t], s[19].y = s[0].y + my[t]; // 把尾巴丢到头前面
+	for (int i = 19;i &gt; 0;i --) swap(s[i], s[i - 1]); // 排序，头放在最前
+}
+int check(){
+	for (int i = 1;i &lt; 20;i ++){
+		if (s[0] == s[i]) return 1; // 碰撞
+	}
+	if (s[0].x &gt; 50 || s[0].x &lt; 1 || s[0].y &gt; 49 || s[0].y &lt; 1) /*注意这里是重点！如果打成&gt;50，会出现26步才出界*/ return 2; // 出界
+	return 0; // 正常运作
+}
+
+int main(){
+	while (1){
+		cin &gt;&gt; n;
+		if (n == 0) break;
+		start(); // 初始化虫子
+		cin &gt;&gt; st;
+		for (int i = 1;i &lt;= n;i ++){
+			c = st[i - 1];
+			if (c == 'E') move(0);
+			if (c == 'W') move(1);
+			if (c == 'S') move(2);
+			if (c == 'N') move(3); // 移动
+            		chk = check(); // 检查
+	        	if (chk){
+	        		if (chk == 1) printf(&quot;The worm ran into itself on move %d.\n&quot;, i); // 撞到自己
+	        		if (chk == 2) printf(&quot;The worm ran off the board on move %d.\n&quot;, i); // 出界
+				break; // 忽略剩下的
+			}
+		}
+		if (!chk) printf(&quot;The worm successfully made all %d moves.\n&quot;, n); // 成功
+	}
+}
+</code></pre>
+<p>两个小时才 <a href="https://www.luogu.com.cn/record/49402393">AC</a>。。。</p>
+<p>某些灵感来源于 @sxyugao 和 @江河之北</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://yjh965.github.io/post/ackmann-han-shu-ti-jie/">
+              <h3 class="post-title">
+                下一篇：Ackmann函数 题解
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">菜</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://yjh965.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

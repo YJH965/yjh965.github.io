@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>木材仓库 题解 | 菜王的 blog</title>
+<meta name="description" content="菜">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://yjh965.github.io/favicon.ico?v=1769938565157">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://yjh965.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://yjh965.github.io">
+        <img class="avatar" src="https://yjh965.github.io/images/avatar.png?v=1769938565157" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://yjh965.github.io">
+        <h1 class="site-title">菜王的 blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://YJH965.github.io" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://YJH965.github.io/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://www.luogu.com.cn/user/477443" class="menu" target="_blank">
+            My Luogu
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://codeforces.com/profile/YuJiahe" class="menu" target="_blank">
+            My CodeForces
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://atcoder.jp/users/YuJiahe" class="menu" target="_blank">
+            My AtCoder
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">木材仓库 题解</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2023-04-16</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://yjh965.github.io/tag/LQ0w-t_P69/">
+                    题解
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>我看了一下题解区，大多数人用的都是 <code>map</code> 和 <code>vector</code>，还有一个用平衡树做的，没有人用 <code>set</code>，我就写了这篇题解。</p>
+<h1 id="思路">思路</h1>
+<h2 id="为什么要用-set">为什么要用 set？</h2>
+<p>我真的搞不懂为啥没有人用 <code>set</code>，题目里的这句话就让我第一时间想到了 <code>set</code>：</p>
+<p>如果已经有相同长度的木材那么输出 <code>Already Exist</code>。</p>
+<h2 id="我们要用到的函数">我们要用到的函数</h2>
+<p>我觉得这道题用 <code>set</code> 真是再合适不过了。</p>
+<p><code>set</code> 里面的 <code>insert(x)</code> 函数其实是有返回值的，会返回一个这样的奇怪的东西：<code>pair&lt;set&lt;int&gt;::iterator,bool&gt;</code>。</p>
+<p>返回的这个 <code>pair</code> 到底是什么意思呢？</p>
+<p>这个 <code>pair</code> 的第二项是一个 <code>bool</code> 类型的东西，代表插入是否成功。（意思就是只有集合里没有 <code>x</code> 的时候才能插入成功），第一项是一个迭代器，如果插入成功的话，它会返回 <code>x</code> 在集合里的位置，我们可以这样：</p>
+<pre><code class="language-cpp">set&lt;int&gt; s;
+set&lt;int&gt;::iterator p = s.insert(x).first;
+</code></pre>
+<p>以后用 <code>*p</code> 就可以得到 <code>x</code> 啦！</p>
+<p>检测是否有相同长度的木材：</p>
+<p><code>if (!s.insert(t).second) cout &lt;&lt; &quot;Already Exist\n&quot;;</code></p>
+<p>一行直接解决问题！<s>STL大法好</s></p>
+<p>这是啥意思呢？如果有相同长度的木材，插入就会失败，<code>pair</code> 的第二项就会返回 <code>false</code>，如果没有，<code>!s.insert(t).second</code> 这个语句就直接实现了插入的目的，这就是我说 <code>set</code> 更方便的原因。</p>
+<p><code>set.empty()</code> 可以直接返回集合是否为空。</p>
+<p>虽然 <code>set</code> 也有 <code>lower_bound()</code> 和 <code>upper_bound()</code>，但是，</p>
+<p><code>set.lower_bound(x)</code> 是返回第一个大于等于 <code>x</code> 的位置，</p>
+<p>而 <code>set.upper_bound(x)</code> 是返回第一个大于 <code>x</code> 的位置，</p>
+<p><code>set.find(x)</code> 会返回第一个 <code>x</code> 的位置。如果没有 <code>x</code>，则会返回 <code>set.end()</code>。</p>
+<p><code>set.erase(iterator)</code>，删除定位器 <code>iterator</code> 指向的值</p>
+<p><code>set.erase(first,second)</code>，删除定位器 <code>first</code> 和 <code>second</code> 之间的值</p>
+<p><code>set.erase(key_value)</code>，删除键值 <code>key_value</code> 的值</p>
+<p>结合刚刚讲的这些函数，我们可以写出代码的第二部分——出货。（<code>s</code> 已经被定义为 <code>set&lt;int&gt;</code>）</p>
+<pre><code class="language-cpp">if (s.find(t) != s.end()) cout &lt;&lt; t, s.erase(s.find(t)); // 找得到
+else { // 找不到
+	lwb = l2 = l3 = s.lower_bound(t);
+	if (lwb == s.begin()) cout &lt;&lt; *lwb, s.erase(lwb); // 特殊情况1，如果在最开始
+	else if (lwb == s.end()) cout &lt;&lt; *(-- l3), s.erase(l3); // 特殊情况2，如果在末尾
+	else if (*lwb - t &lt; t - *(-- l2)) cout &lt;&lt; *(l3), s.erase(l3); // 选比较长的
+	else cout &lt;&lt; *(-- l3), s.erase(l3); // 选比较短的
+}
+cout &lt;&lt; endl;
+</code></pre>
+<p>那么多方便的函数，果然还是 STL 大法好啊！还不快去用起来？</p>
+<h1 id="代码">代码</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;set&gt; 
+
+using namespace std;
+
+int n, op, t;
+set&lt;int&gt;::iterator lwb, l2, l3;
+set&lt;int&gt; s;
+int main(){
+	cin &gt;&gt; n;
+	for (int i = 1;i &lt;= n;i ++){
+		cin &gt;&gt; op &gt;&gt; t;
+		if (op == 1){
+			if (!s.insert(t).second) cout &lt;&lt; &quot;Already Exist\n&quot;;
+		}
+		else {
+			if (s.empty()){
+				cout &lt;&lt; &quot;Empty\n&quot;;
+				continue;
+			}
+			if (s.find(t) != s.end()) cout &lt;&lt; t, s.erase(s.find(t));
+			else {
+				lwb = l2 = l3 = s.lower_bound(t);
+				if (lwb == s.begin()) cout &lt;&lt; *lwb, s.erase(lwb);
+				else if (lwb == s.end()) cout &lt;&lt; *(-- l3), s.erase(l3);
+				else if (*lwb - t &lt; t - *(-- l2)) cout &lt;&lt; *(l3), s.erase(l3);
+				else cout &lt;&lt; *(-- l3), s.erase(l3);
+			}
+			cout &lt;&lt; endl;
+		}
+	}
+}
+</code></pre>
+<p>32 行直接搞定，大概是最短的代码了。</p>
+<p>本文部分内容选自<a href="https://blog.csdn.net/byn12345/article/details/79523516">C++中set用法详解</a>，作者<a href="https://blog.csdn.net/byn12345">byn12345</a>，如果想了解 <code>set</code> 的更多使用方法，这篇文章值得一看。</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://yjh965.github.io/post/chocolate-milk-s-ti-jie/">
+              <h3 class="post-title">
+                下一篇：Chocolate Milk S 题解
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">菜</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://yjh965.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>点分治学习笔记 | 菜王的 blog</title>
+<meta name="description" content="菜">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://yjh965.github.io/favicon.ico?v=1769938565157">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://yjh965.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://yjh965.github.io">
+        <img class="avatar" src="https://yjh965.github.io/images/avatar.png?v=1769938565157" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://yjh965.github.io">
+        <h1 class="site-title">菜王的 blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://YJH965.github.io" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://YJH965.github.io/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://www.luogu.com.cn/user/477443" class="menu" target="_blank">
+            My Luogu
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://codeforces.com/profile/YuJiahe" class="menu" target="_blank">
+            My CodeForces
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://atcoder.jp/users/YuJiahe" class="menu" target="_blank">
+            My AtCoder
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">点分治学习笔记</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2023-04-16</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://yjh965.github.io/tag/FOcb_P3jId/">
+                    学习笔记
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>前置知识：树的存储与遍历，树的重心。</p>
+<h1 id="点分治">点分治</h1>
+<p><s>淀粉质</s>点分治，是一种在树上静态统计满足某种条件的路径的算法。</p>
+<p>显然，设哪个点为根与答案没有关系，所以我们可以任意令一个点为根，设这个根为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">rt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">t</span></span></span></span>。</p>
+<p>树上的路径可以分为两类：</p>
+<ol>
+<li>经过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">rt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">t</span></span></span></span> 的路径。</li>
+<li>不经过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">rt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">t</span></span></span></span>，在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">rt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">t</span></span></span></span> 的某棵子树中。</li>
+</ol>
+<p>根据分治思想，对于第二类路径，我们可以在子树内递归进行处理。</p>
+<p>对于第一类路径，我们可以将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo>→</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u \to v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span> 拆成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>t</mi><mo>→</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">rt \to u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>t</mi><mo>→</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">rt \to v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span>，然后就可以使用一遍 DFS 来求出每一条类似的路径。</p>
+<p>因为对某一个根 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">rt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">t</span></span></span></span> 的每一棵子树的 DFS 时间和为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>，所以设遍历层数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span></span></span></span> 则时间复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>h</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(hn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">h</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>。如果我们每一次设每一棵子树的重心为根，时间复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n \log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>。</p>
+<p><a href="https://www.luogu.com.cn/problem/P3806">模板题</a>代码：</p>
+<pre><code class="language-cpp">#include &lt;algorithm&gt;
+#include &lt;cstring&gt;
+#include &lt;cstdio&gt;
+#include &lt;queue&gt;
+struct edge{
+	int v, w, nxt;
+};
+struct graph{
+	int cnt, head[10001];
+	edge e[20001];
+	void init(){
+		cnt = 0;
+		memset(head, -1, sizeof(head));
+	}
+	inline void addedge(int u, int v, int w){
+		e[++ cnt] = {v, w, head[u]};
+		head[u] = cnt;
+	}
+	inline int h(int u){return head[u];}
+	inline edge operator[](int x){return e[x];}
+}g;
+
+using namespace std;
+
+int n, m, u, v, w, q[101];
+int siz[10001], d[10001], dd[10001], cnt, maxs, p;
+bool vis[10001], t[10000001], ans[101];
+queue&lt;int&gt; del;
+void dfs1(int s, int u, int fa){
+	int maxss = 0;siz[u] = 1;
+	for (int i = g.h(u);i != -1;i = g[i].nxt){
+		int v = g[i].v;
+		if (v == fa || vis[v]) continue;
+		dfs1(s, v, u);
+		siz[u] += siz[v];
+		maxss = max(maxss, siz[v]);
+	}
+	maxss = max(maxss, s - siz[u]);
+	if (maxss &lt; maxs) p = u, maxs = maxss;
+} // 找重心并计算 siz
+void dfs2(int u, int fa){
+	dd[++ cnt] = d[u];
+	for (int i = g.h(u);i != -1;i = g[i].nxt){
+		int v = g[i].v, w = g[i].w;
+		if (v == fa || vis[v]) continue;
+		d[v] = d[u] + w, dfs2(v, u);
+	}
+} // 计算到根的距离
+void solve(int u, int fa){
+	t[0] = 1, del.push(0), vis[u] = 1;
+	for (int i = g.h(u);i != -1;i = g[i].nxt){
+		int v = g[i].v, w = g[i].w;
+		if (v == fa || vis[v]) continue;
+		cnt = 0, d[v] = w, dfs2(v, u); // 对于每一棵子树计算距离
+		for (int j = 1;j &lt;= m;j ++){
+			for (int k = 1;k &lt;= cnt;k ++){
+				if (q[j] &gt;= dd[k]) ans[j] |= t[q[j] - dd[k]];
+			}
+		} // 用桶统计并计算答案
+		for (int k = 1;k &lt;= cnt;k ++){
+			if (dd[k] &lt;= 10000000) del.push(dd[k]), t[dd[k]] = 1;
+		} // 记录要赋 0 的值
+	}
+	while (del.size()) t[del.front()] = 0, del.pop(); // 注意不能直接 memset，否则时间复杂度不对
+	for (int i = g.h(u);i != -1;i = g[i].nxt){
+		int v = g[i].v, w = g[i].w;
+		if (v == fa || vis[v]) continue;
+		maxs = 1919810000;
+		dfs1(siz[v], v, u);
+		dfs1(siz[v], p, 0);
+		solve(p, u); // 选择重心作为根
+	}
+} // 点分治
+int main(){
+	g.init();
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+	for (int i = 1;i &lt; n;i ++) scanf(&quot;%d%d%d&quot;, &amp;u, &amp;v, &amp;w), g.addedge(u, v, w), g.addedge(v, u, w);
+	for (int i = 1;i &lt;= m;i ++) scanf(&quot;%d&quot;, &amp;q[i]);
+	maxs = 1919810000;
+	dfs1(n, 1, 0);
+	dfs1(n, p, 0);
+	solve(p, 0);
+	for (int i = 1;i &lt;= m;i ++) printf(ans[i] ? &quot;AYE\n&quot; : &quot;NAY\n&quot;);
+}
+</code></pre>
+<h1 id="例题">例题</h1>
+<p><a href="https://www.luogu.com.cn/problem/P4178">Tree</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P2634">[国家集训队] 聪聪可可</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P4149">[IOI2011] Race</a></p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://yjh965.github.io/post/di-qia-er-shu-xue-xi-bi-ji/">
+              <h3 class="post-title">
+                下一篇：笛卡尔树学习笔记
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">菜</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://yjh965.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

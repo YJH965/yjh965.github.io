@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>学好信竞：浅谈信息学竞赛考场策略及程序测试 | 菜王的 blog</title>
+<meta name="description" content="菜">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://yjh965.github.io/favicon.ico?v=1769938565157">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://yjh965.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://yjh965.github.io">
+        <img class="avatar" src="https://yjh965.github.io/images/avatar.png?v=1769938565157" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://yjh965.github.io">
+        <h1 class="site-title">菜王的 blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://YJH965.github.io" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://YJH965.github.io/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://www.luogu.com.cn/user/477443" class="menu" target="_blank">
+            My Luogu
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://codeforces.com/profile/YuJiahe" class="menu" target="_blank">
+            My CodeForces
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://atcoder.jp/users/YuJiahe" class="menu" target="_blank">
+            My AtCoder
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">学好信竞：浅谈信息学竞赛考场策略及程序测试</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2023-04-16</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://yjh965.github.io/tag/snS5DT8z2/">
+                    杂物
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>本文作者是江苏省常州高级中学吴翼同学发布的信息学竞赛江苏省论文，原标题为《谈比赛发挥》。</p>
+<h1 id="前言">前言</h1>
+<p>信息学竞赛本身是一个美好的东西，她包含着奋斗、努力、追求、成长、汗水和收获。一个选手从与其接触，到了解，再到热爱，无数的时间与之为伴；同样，信息学也给予了我们太多：给予了友情，老师的关怀，太多的希冀、责任和无数难以忘怀经历。</p>
+<p>可是，太多的时候，信息学竞赛总是透着那么多的忧伤，似乎她带来的美轮美奂的精彩总被那些无可奈何的泪水和发自内心的懊悔所掩盖。</p>
+<p>遗憾——如此悲情的字眼的不停出现，似乎把本该光鲜的信息学竞赛抹上了灰色。<br>
+遗憾，那么伤痛，寻根溯源，笔者希望以此文，让大家发挥水平，让这个词语永远的离大家而去。</p>
+<h1 id="一-简介">一、简介</h1>
+<h2 id="1-什么是考场策略">1. 什么是考场策略？</h2>
+<p>一场信息学竞赛，比赛时间从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 个小时到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span> 个小时不等，题目从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 题到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> 题不等。在这样的一个长时间的过程里，如何分配时间，如何对待手上的题目，用什么方式和顺序对待手上的题目等等一系列的决策问题，我们称之为考场策略。</p>
+<h2 id="2-什么是程序测试">2. 什么是程序测试？</h2>
+<p>程序测试就是在写完程序后，利用各种方式检验程序正确性的过程。</p>
+<h2 id="3-二者有什么关系">3. 二者有什么关系？</h2>
+<p>概要的说，考场策略包含了程序测试这一个环节，因而本文中，对于考场策略我们讨论的是一个总揽全局的安排，而程序测试讨论的则是具体的实施方法。</p>
+<p>可以说，考场策略的制定在程序测试之前，而程序测试又能影响到考场策略的实施。</p>
+<h1 id="二-考场策略">二、考场策略</h1>
+<p>一个完整的测试包括审题，思考，做题，检验这几个环节，我们将分开讨论这几个步骤。</p>
+<h2 id="1-审题">1. 审题</h2>
+<h3 id="11-重要性">1.1 重要性</h3>
+<h3 id="建议一">【建议一】</h3>
+<p>一场测试应该花至少 30 分钟来审题，并做相关笔录。</p>
+<p>很多同学觉得这花去的时间太多了，大大占用了之后的解题时间。但是无数的事实告诉了我们审题的重要性，无数的遗憾正是由审题开始的。</p>
+<h3 id="实例一-noi2008-party">【实例一】 <a href="https://www.luogu.com.cn/problem/P1477">NOI2008 party</a></h3>
+<p>此题是 NOI2008 Day1 的第一道题，也是最容易拿分的题目，此题有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">50\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的小数据，因此使用暴力枚举算法能够至少拿到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn></mrow><annotation encoding="application/x-tex">50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span></span></span></span> 分。而悲剧也正从这一刻开始了。</p>
+<p>注意题目中这样一句话：“输出文件 <code>party.out</code> 包含两个数，第一个数为最大可能的面具类数，第二个数为最小可能的面具类数。”也就是说，假设输出的两个数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>，那么应该满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>≥</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A\ge B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>。</p>
+<p>题目描述清晰。可是，现场江苏省队十一人中，仅四人看对这一条件，其他七人均将小的那一个先输出，再将大的那一个输出。因此 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>7</mn></mrow><annotation encoding="application/x-tex">7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">7</span></span></span></span> 人最高分仅 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>30</mn></mrow><annotation encoding="application/x-tex">30</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">0</span></span></span></span> 分。其中一人损失近 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>70</mn></mrow><annotation encoding="application/x-tex">70</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">7</span><span class="mord">0</span></span></span></span> 分。</p>
+<h3 id="客观原因">客观原因</h3>
+<ol>
+<li>样例中输出的两个数是一样的，并没有体现需要题目描述;</li>
+<li>以往所有的题目都是先输出小的再输出大的，而这一次比较特殊。</li>
+</ol>
+<h3 id="主观原因">主观原因</h3>
+<p>据事后交流，所有人都没有花足够的时间在审题这一环节上，而是花了更多的时间在算法思考和程序设计上，对题目的理解过分依靠直觉和以往经验。</p>
+<h3 id="实例二apio2009-convention">【实例二】<a href="https://www.luogu.com.cn/problem/P3626">APIO2009 convention</a></h3>
+<p>注意题目中有这样对方案的描述：“首先，将租借给客户数量最多的策略最为候选，将所有的公司按照他们发出请求的顺序编号。对于候选策略，将策略中的每家公司的编号按升序排列。最后选出其中字典序最小的候选策略作为最终的策略。”</p>
+<p>这段描述一共有三句话，本届江苏省队 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>11</mn></mrow><annotation encoding="application/x-tex">11</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">1</span></span></span></span> 人中有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span>人（包括笔者）都看清楚了第一句话和最后一句话，但都没有注意到第二句话，因而此题均为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 分。</p>
+<p>而此题有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">50\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的小数据，即用替代算法也可得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">50\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的分数。此外，事实证明利用错误的贪心算法也可以得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn></mrow><annotation encoding="application/x-tex">50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span></span></span></span> 分左右的分数。以笔者为例，笔者如果此题加上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn></mrow><annotation encoding="application/x-tex">50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span></span></span></span> 分则将得到国际金牌，其遗憾不言而喻。</p>
+<h3 id="客观原因-2">客观原因</h3>
+<ol>
+<li>
+<p>这道题目描述比较冗长，这一句条件并不是很显眼，并且去掉这个条件仍然是一道复杂度相同的问题;</p>
+</li>
+<li>
+<p>样例和题目举的例子中均未体现这一个条件。</p>
+</li>
+</ol>
+<p>经过交流，所有看错此题选手，均是由于题目描述的冗长，为了节省时间，未能仔细斟酌文字描述，而是直接通过题目的例子来理解题目，因而主观的忽略了这一个条件。</p>
+<p>分析一下上述两个例子，可以发现一些共性。</p>
+<p>大家的目的都是为了快速的理解题目，都是过多的相信了经验和习惯，都是只关注题目所给样例。可见，发生这种悲剧的原因都属无视了审题这一环节的重要性!</p>
+<p>到这里显然笔者已经不用再重申审题环节的重要性了。不要因为某一次成功的因为经验或者小聪明节省了几分钟的写程序的时间而沾沾自喜，这样的做法如果成为了习惯，那么遗憾将是必然的。</p>
+<h3 id="12-标记法">1.2 标记法</h3>
+<p>为了解决这一问题，笔者总结了一些方法，称其为标记法，基本的方式都是用笔在纸制题目上进行标记。</p>
+<p>关键字：对于题目中的一些关键字，将其圈出</p>
+<p>所谓关键字就是比较级，最高级等形容词，和一些关键的名字。</p>
+<p>序号：对于一些定义冗长的描述，每一步的限制都标上序号，从而明确对题目的理解</p>
+<p>建议是做到每一个标点后都要做一定的标记，这样避免漏掉一些描述。当然也可以不用每个标点后都写数字，如果两个短句都在说同一个事情，那么可以用一个点，或者一个三角来表示后一个短句的步骤和上一个短句相同。</p>
+<p>回顾：不断回顾重点细节</p>
+<p>对于一个一下子难以看懂的描述，建议先做一个标记，比如问号，看完后再对这些打问号的地方重新审视，可以写一些对这些地方的理解。</p>
+<p>形象和抽象：将形象的问题抽象，对抽象的问题形象</p>
+<p>对于一个形象的问题，我们往往需要对其进行抽象，进行数学建模；而对于一个过于抽象的问题（比如 <a href="https://www.luogu.com.cn/problem/P4272">CTSC2009 sequence</a>），我们则需要进行形象的思维。<br>
+建议将这些经过分析的东西写在题目描述的旁边或者后面。</p>
+<p>比如对于上面提到的实例二中的那句被大家忽略的描述，就可以如此标记：</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 首先，将租借给客户 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>a</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(a)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mclose">)</span></span></span></span> 数量最多的策略最为候选，将所有的公司按照他们 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>b</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(b)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mclose">)</span></span></span></span> 发出请求的顺序编号。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">2</span><span class="mclose">)</span></span></span></span> 对于候选策略，将策略中的每家公司的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>c</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(c)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">c</span><span class="mclose">)</span></span></span></span> 编号按 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>d</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(d)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">d</span><span class="mclose">)</span></span></span></span> 升序排列。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mclose">)</span></span></span></span> 最后选出其中字典序最小的候选策略作为最终的策略。（这里要排两次序，问题的关键是如何处理第二次排序的最优性问题！）</p>
+<p>不难发现，如果严格按照上述方法进行标记，是不会漏掉这一个条件的，或许这会浪费一些时间，但是挽回的损失是巨大的。</p>
+<h3 id="13-把握尺度">1.3 把握尺度</h3>
+<p>那是不是把试卷写的越满就越好呢？笔者观点是否定的。</p>
+<p>要标记，但是也不是要让所有记号将白色的考卷染成黑色；同样的，考卷也不是草稿纸，笔者认为，过分的标记只会让纸面变得混乱不堪，反而影响阅读，同样也过于形式。</p>
+<p>标记法的目的是为了加深对题目的印象，做到一次审题效率最大化，是审题的辅助，并不是一个形式化的东西。</p>
+<p>使得自己恰好完全理解，使得自己不会遗漏条件，不会主观臆断。这是使用标记法的原因，也是自己把握的尺度。适当即可，一切是为了向遗憾说再见。</p>
+<h2 id="2-思考">2. 思考</h2>
+<h3 id="建议二">【建议二】</h3>
+<p>审题之后，对每一道题目都应该进行较为深入的思考。建议进行 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>20</mn><mo>∼</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">20 \sim 30</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">0</span></span></span></span> 分钟左右的思考，同时不可浅尝辄止，读过便罢。</p>
+<p>这里的“思考”并不是指如何分析一道题目或建立数学模型之类，这不是本文讨论范围。</p>
+<p>而除此之外，“思考”还能有什么门道呢？答案是肯定的。</p>
+<h3 id="实例三ctsc2009-day2">【实例三】CTSC2009 Day2</h3>
+<p>CTSC2009 Day2 有传统题 world 和 garden，以及提交答案题 puzzle。</p>
+<p>puzzle 是经典的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>N</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">N^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> 数码问题。world 和 garden 笔者第一眼都没有想到很直接的做法，而 puzzle 则应该是手动做一些模拟之后利用 A* 搜索解答。<br>
+于是笔者花了几乎所有的时间做了提交答案题，而几乎没有怎么做另外两道题，最后此题拿到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>45</mn></mrow><annotation encoding="application/x-tex">45</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">5</span></span></span></span> 分——而这确实是一个比较不错的分数。</p>
+<p>但是事实上除 puzzle 之外的两道题，现场都有很多的满分和高分，而 puzzle 的现场最高分不过是一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>70</mn></mrow><annotation encoding="application/x-tex">70</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">7</span><span class="mord">0</span></span></span></span> 分，绝大多数的人都是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>20</mn><mo>∼</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">20 \sim 30</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">0</span></span></span></span> 左右。<br>
+笔者除 puzzle 外，仅得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span> 分。</p>
+<p>笔者用自己惨痛的经历说明了思考的重要性。</p>
+<p>很多时候很多简单的题目往往套着复杂的外衣，而复杂的题目则往往有着简单的表象，还有的时候，有一些题需要一些分析才能得到问题的本质，如果贸然跳过，则永远会觉得此题让人一头雾水，进而影响到了考场上策略的安排。</p>
+<p>可以说对每道题目都进行一定程度的思考，是考场策略正确实施的重要环节，也是重要保证。</p>
+<p>摸清楚题目的脉路，是一切的基础。</p>
+<p>对于【实例三】中的情况，笔者犯的最大的错误就是根据以往的经验，主观的认为 CTSC 的传统题都是基本不可做的，加之 world 一题有着非常抽象冗长的描述，再由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>N</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">N^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> 数码问题过于经典，所以笔者武断的认为这次传统题都不可做，最后犯了严重的策略错误。</p>
+<p>显然，如果能够每道题都仔细思考一番，就能发现 world 一题搜索的本质，也就不会发生如此的遗憾。</p>
+<h3 id="22-冷静的判断">2.2 冷静的判断</h3>
+<p>上文说道，思考需要仔细。而何为仔细？是否想到算法就可以了呢？也不是，想到了一个算法并不能直接予以肯定，而是要先否定他，想想有什么漏洞，或者想想是否有更好的方法，莽撞的立刻动手写题往往会浪费更多的时间。</p>
+<h3 id="实例四noi2007-day2">【实例四】NOI2007 Day2</h3>
+<p>NOI2007 Day2 有一道令人记忆深刻的数据结构题 necklace，此题标准做法是线段树。而更容易想到的是，对于这种连续区间问题有着超强适应能力的 Splay。</p>
+<p>考场上 XXX 在思考的过程中很快想到了利用 Splay 解决这个问题，并迅速开始了编码。最终利用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 个小时，终于写出了一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>350</mn></mrow><annotation encoding="application/x-tex">350</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">5</span><span class="mord">0</span></span></span></span> 行的正确代码。</p>
+<p>但是由于时间的过多使用，导致另外两道题的时间不够用，而这道数据结构题，由于专注于 Splay，并没有再深入的思考而没有意识到可以使用更加简单和快速的线段树，导致最终此题也因超时的缘故仅仅比朴素算法多了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span> 分。</p>
+<p>Day2 的成绩最终导致 XXX 和金牌差之毫厘。</p>
+<p>试想，如果能在考场上对另外两题多思考一下，进行正确的评估和定位，并对已有的算法多进行审视，怀疑和分析，结果也许就会好的多了。</p>
+<p>冷静和深入是思考的要求。</p>
+<h2 id="3-做题">3. 做题</h2>
+<p>这里的做题也并不是说如何写程序，如何实现模型，这些不是本文讨论内容。这里的做题主要讨论的是用什么顺序做题，用什么的心理期望来做题，如何分配时间来做题。</p>
+<h3 id="31-先易后难">3.1 先易后难</h3>
+<p>现在的题目普遍有比较多的部分分可以拿，而很多的时候即使想出完美算法，实现这些完美算法未必在考试时间内能够完成，那是应该节约时间拿到一些部分分，还是花时间思考和实现完美算法呢？对于难度相当的两道题，是应该先做哪一道呢？这是一个值得琢磨的问题。</p>
+<h3 id="实例五ctsc2009-day1">【实例五】CTSC2009 Day1</h3>
+<p>CTSC2009 Day1 一共三道题目，分别是传统题 trique、sequence，和提交答案题 locate。trique 是类似汉诺塔类的最优值问题，sequence 是复杂的动态规划（贪心）。trique 有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>20</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">20\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的分数非常简单，sequence 有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>30</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">30\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的小数据，locate 有一个数据是求带权中位数。</p>
+<p>XX 在考试中选择了先做 trique，并用很短的时间写了一个暴力程序对自己的程序进行检测，但是发现小问题不断，于是便进行不断的改进，最终思考 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 个多小时也未能得出正确结论。慌乱之中，随手写了剩下两题的小数据。最终只有 trique 得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn></mrow><annotation encoding="application/x-tex">50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span></span></span></span> 分，其余两道均 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 分。</p>
+<p>相对于 XX，另一人 YY 在考试中一开始便写了 trique 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>20</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">20\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的送分数据，以及 sequence 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>30</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">30\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的小数据，并花了较多的时间利用调整做提交答案题 locate。最终得分是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>30</mn><mo>+</mo><mn>60</mn><mo>+</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">30+60+30</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">0</span></span></span></span>，没有一道题的得分进入前十，但是总排名却在前十之列。</p>
+<p>CTSC2009 是一次非常经典的比赛，可以说这次比赛对选手策略的运用提出了很高的要求。从上面不难看出，对于一次考试的题目，绝对不能一开始盯着一道题花大量的时间。对于花很多时间先做难题，如果做不出，则必然对心情是一种极大的打击，非常容易影响考试状态，而即使做出了（【实例四】中 NOI2007 Day2 XXX 的表现），也会因为时间上的紧张影响到其他题目的解答。</p>
+<h3 id="建议三">【建议三】</h3>
+<p>合理安排做题顺序，遵循四个字：先易后难。</p>
+<p>这句话说的轻巧，如果分辨题目是难还是易呢？所以说先一步进行一定深度的思考是合理制定考场策略的前提。在进行一定思考之后，应该对不同的题目不同规模和性质的数据进行解题时间的评估。</p>
+<h3 id="建议四">【建议四】</h3>
+<p>经过合理的预估，对于明确估计能够在半个小时之内编写完毕并且调试成功的题目（或者题目对应的部分数据），应该立刻将其完成。</p>
+<p>对于自己并不自信能在半个小时之内写出对付一道题目的部分数据的正确程序，那么样的部分数据就不应该定义为简单了。</p>
+<p>写完了简单的，再写有一些初步的算法需要继续思考，或者需要大量编程量的题目。</p>
+<p>此时，有人便会提出疑议，会不会因写简单程序而占用了写出得分更多算法的程序能够用时间?</p>
+<p>其实这是不会的，原因有二：</p>
+<p>第一点，是这里的简单是在充分的自信下定义的。在考试开始的时候，如果能够正确而快速的写出一个能够得分的程序，不但是对自信的提高，也是让自己更好的进入考试状态;</p>
+<p>第二点，如果一道题目，最简单直接的拿基础分的程序都需要比较长的时间，那么此题必然是一个比较难的题。通过上面的讨论我们知道，这种比较难的题不宜在一开始做，而应放在后面做。如果开始时间紧张，写暴力程序也是避免出现意外，避免出现最后得较多分的程序未能成功写出而拿不到分的情况。</p>
+<h3 id="32-杜绝模棱两可">3.2 杜绝模棱两可</h3>
+<p>很多人又要说，如果对于一种算法，并不能通过题目得知具体的得分情况，该如何处理?</p>
+<p>这种情况显然是普遍的，很多人由于嫌恶暴力算法得分不高，不愿意触及，而更愿意相信一些通过灵感的来的算法（比如一些诡异贪心）。实际情况是怎么样的呢?</p>
+<h3 id="实例六noi2006">【实例六】NOI2006</h3>
+<p>“这次 NOI 我只有两题接近满分。一道是平衡树的题目（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>90</mn></mrow><annotation encoding="application/x-tex">90</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">9</span><span class="mord">0</span></span></span></span> 分），一道是提交答案题（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>92</mn></mrow><annotation encoding="application/x-tex">92</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">9</span><span class="mord">2</span></span></span></span> 分）。其他的题目我接近 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 分。有些题目会告诉你百分之多少的测试点的规模是多少，小的规模的程序也许会很容易编，但是只能拿一点分，比如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>40</mn></mrow><annotation encoding="application/x-tex">40</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">0</span></span></span></span> 分，抓住这点分！只要我能够抓住这 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>40</mn></mrow><annotation encoding="application/x-tex">40</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">0</span></span></span></span> 分，我就可以进国家集训队了，我就可以拿 NOI 金牌了！可是，当时的我，想了一个可以‘对付’所有数据的贪心算法（所谓‘对付’，就是说可以不超空间和时间地出解），这样得分的几率是很小的，小到远远不到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>40</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">40\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">4</span><span class="mord">0</span><span class="mord">%</span></span></span></span>，我就拿了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 分！这次 NOI，我能拿这样的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>40</mn></mrow><annotation encoding="application/x-tex">40</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">0</span></span></span></span> 分的机会，我错过了两个！” ——摘自陈明骋 NOI2006 总结</p>
+<p>NOI2006 江苏没有一个人获得金牌，可以说江苏队取得的成绩与队员的能力完全不成正比，留下的也是无尽的遗憾。此处直接引用原句，从中不难发现深深的遗憾。即使有一个没有明确得分估计的算法，笔者仍然有如下建议。</p>
+<h3 id="建议五">【建议五】</h3>
+<p>一定要写所有确定的，能够得到一定分数的基本算法。</p>
+<p>一个所谓比较“诡异”的算法，如果能取得比较高的分数自然是好事，而如果不能，写一个能够得分的程序，则绝对是一个保险的做法。</p>
+<h2 id="4-检验">4. 检验</h2>
+<p>这是一个往往被忽视的环节，下面说两个真实而悲壮的例子。</p>
+<h3 id="实例七-ctsc2009-day2">【实例七】 CTSC2009 Day2</h3>
+<p>仍然是 CTSC2009 Day2，只是这里要说的主角不是笔者。考试内容可以参看【实例三】。</p>
+<p>首先说说 A，由于吸取了 WC2009 自己所犯的重大策略失误，A 在的做题思考的发挥上非常完美。在 Day1 的比赛中，稳定发挥，并将总成绩提高到前十；而在 Day2 中，A 很快看出 world 是一道搜索题，并在一个小时内解决 world。此后同样在不长的时间里得出了 garden 的正确算法，并完成了一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>400</mn></mrow><annotation encoding="application/x-tex">400</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">0</span><span class="mord">0</span></span></span></span> 行的代码，剩下的时间还有一个小时左右。此后 XXX 将所有的时间放在了最麻烦的提交答案题 puzzle 上。</p>
+<p>与 A 相似，在 Day1 的提交答案题 locate 上拿到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>94</mn></mrow><annotation encoding="application/x-tex">94</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">9</span><span class="mord">4</span></span></span></span> 分高分，并因此总成绩一跃上升为第二的 B，也很快想出了 garden 的做法，并将最后的所有时间花在了 puzzle 上。只是很可惜，最后的结果很悲剧。</p>
+<p>A 的得分是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn><mo>+</mo><mn>14</mn><mo>+</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">100+14+0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，B 的得分是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>+</mo><mn>22</mn><mo>+</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">0+22+0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，A 的 garden 写错了一个小的地方，B 则是将文件名打错。最终 A 位列第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>8</mn></mrow><annotation encoding="application/x-tex">8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span></span></span></span>，B 位列第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span>，都遗憾的没有能够进入面试环节——如果那两个错误不发生，他们都将进入面试。</p>
+<p>可以看到，在【实例七】中，A 和 B 虽然在审题、思考和做题环节都非常出色，但是都是由于忽视了检验这一环节，导致未能发现程序中微小的错误，导致最后巨大的遗憾。</p>
+<h3 id="建议六">【建议六】</h3>
+<p>检查是必须，这是一个必须的步骤，不能主观的回避。</p>
+<p>即使实力强如 A 和 B，也会犯如此低级的错误，在重大的比赛中要告别遗憾，必须重视检查这一环节。</p>
+<p>每道题目都要检查，以笔者的角度推荐写完立刻检查，因为此时的印象最深刻，效果最好，同时检查完毕后就排出了这道题目对后面比赛的影响，更容易让人在后面的时间里面集中精力。</p>
+<p>同时在最后的半个小时左右的时间里，笔者建议不要再写程序，如例子中 A 和 B，抢这一点时间不过为了争得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>20</mn></mrow><annotation encoding="application/x-tex">20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span> 分左右的分数，可谓丢了芝麻剪了西瓜。</p>
+<p>笔者认为，在最后的时刻抢一些分数会导致非常的紧张，除非之前的检查工作非常细致和到位，推荐最后一定要把所有的题目仔细的静态阅读一遍，顺一遍思路。</p>
+<p>试想如果 A 和 B 能多检查，悲剧就不会发生了。</p>
+<h2 id="5-说明">5. 说明</h2>
+<p>诚然，上述的内容并没有说明如何得高分，如何超水平发挥，如何战胜别人，但是，上文却讲述了一个最基础的东西，只有先保证不输，才能有底气的考虑如何战胜别人。</p>
+<h1 id="三-如何测试程序">三、如何测试程序</h1>
+<h2 id="1-概述">1. 概述</h2>
+<p>测试程序是非常重要但却经常被忽视的一个环节，很多时候想到了正确算法，但是往往因为小的错误而功亏一篑，扼腕叹息，为时晚矣。</p>
+<p>上文中我们已经说到了测试的重要性，而如何高效的测试程序，有一些什么注意的要点？下面我们就要谈谈具体如何测试程序。笔者认为，程序的测试工作分为两个部分：静态查错和制作测试数据。</p>
+<h2 id="2-静态查错">2. 静态查错</h2>
+<p>这里先引用吴景岳的一段话: “在编程之后不要急着运行调试，而是把自己的程序仔细看看，有什么错误，这也被称作“静态查错”。因为很多错误在运行调试中是很难被发现的，比如常量定义、数组大小、变量名打错……静态查错还能够发现算法实现过程当中的一些小问题。”</p>
+<p>静态查错是测试程序的第一步，也是关键的一步。尤其对一些写了很长时间，代码量又非常大的题目，经过长时间的编码，人非常容易由于注意力的不集中而犯下很多低级的错误。静下心来重新想一遍算法，仔细分析一遍程序，是能够发现很多的问题的，认真的静态查错也能让之后的调试工作减少非常多的工作量。</p>
+<h3 id="建议七">【建议七】</h3>
+<p>静态查错，最重要的是心静。</p>
+<p>心静，即不可以因为刚刚写出一道难且复杂的题目而过份沉浸在成功的喜悦之中。静态查错，应该是把程序当成阅读来对待，认真的分析每一种情况，不能凭主观印象而粗枝大叶的扫几次，这样的查错是没有意义的。</p>
+<p>很多 OI 选手非常依赖调试器，这样不但非常不科学，而且往往很低级的错误需要极长的繁复的过程才能找出。这样在考场非常容易造成急躁的情绪，最后使效率越来越低。</p>
+<p>总之，静态查错是一种必备的，不可缺失的能力。</p>
+<h2 id="3-制作测试数据">3. 制作测试数据</h2>
+<p>从大体上说，测试数据分为三种，小数据、大数据和极限数据。</p>
+<p>除了写脚本，C 语言的选手可以使用 <code>system()</code> 以及 <code>sprintf()</code> 函数在程序内直接写测试脚本（即对拍器），这样由于脚本和程序同步，更加方便。</p>
+<p>另外，写这种很自由的程序其实也是一种调剂，比如笔者在这种脚本程序时，总喜欢在自己的程序测试几百组数据正确后在屏幕上输出一个笑脸 <code>o(-)o</code>  来对自己予以肯定。</p>
+<h3 id="测试策略">测试策略</h3>
+<p>这里主要是想说明下面的这个问题。</p>
+<p>从上面的描述中可以看出，随机数据并利用程序或者脚本对程序进行大规模测试的方法非常的便捷高效，那么是不是就可以忽略手工测试数据的生成呢？</p>
+<p>答案肯定是否定的!</p>
+<h3 id="建议八">【建议八】</h3>
+<p>制作测试数据时，手动构造和程序构造在允许的情况下都是不可忽略的。</p>
+<h3 id="实例八boi2008-mafia">【实例八】<a href="https://www.luogu.com.cn/problem/P4662">BOI2008 Mafia</a></h3>
+<p>这道题是求一组网络最小割的方案，笔者由于疏忽误将所有与源相连的满载边均判断为割集，并输出为了方案。笔者进行了随机数据的测试，并通过了官方数据的所有五个回馈点（feedback），笔者此时自信满满的提交，结果测试结果是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 分（由于 BOI 数据采用捆绑测试，而所有回馈数据都是非独立的）。</p>
+<h3 id="实例九江苏差额选拔-2008-day3-cactus">【实例九】江苏差额选拔 2008 Day3 cactus</h3>
+<p>此题笔者写程序时，由于程序比较复杂，在某处循环少写了一层数组下标，但是静态查错笔者并没有能够发现问题。由于错误很小，笔者才考场上测试了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>800</mn></mrow><annotation encoding="application/x-tex">800</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span><span class="mord">0</span><span class="mord">0</span></span></span></span> 组比较小规模的随机数据都没有发现错误。而提交之后，测试结果是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>40</mn></mrow><annotation encoding="application/x-tex">40</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">0</span></span></span></span> 分，笔者赛后再次测试了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>200</mn></mrow><annotation encoding="application/x-tex">200</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span></span></span></span> 组规模大一点的数据，就发生了错误。</p>
+<p>从上述两个关于笔者的真实事例中，不难发现几个问题。</p>
+<ol>
+<li>
+<p>首先，随机数据非常不稳定，对于很多细小的错误，很多时候，当时运不济的时候并不能随机出很好的数据;</p>
+</li>
+<li>
+<p>其次，可以发现数据规模越大，随机的效果越好，因此对于小数据，笔者强烈建议一定要仔细思考，考虑各种情况，出几个数据，很多的时候，当随机很难构造好的数据的时候（尤其是图论问题，由于图的种类过多，随机的生成的图往往过于“朴素”），手动构造数据将变得更为重要;</p>
+</li>
+<li>
+<p>最后笔者再次提醒，千万不要相信题目所给出的样例和回馈，有的时候，片面的样例和回馈甚至会产生不良的误导。</p>
+</li>
+<li>
+<p>此外，利用制作的测试数据测试完毕后，笔者建议再回顾一遍程序，检查是否将所有注释，或者改变的数组范围和常数等等都标记正常，防止出现文件忘记打开之类的遗憾的错误。</p>
+</li>
+</ol>
+<h1 id="四-实践">四、实践</h1>
+<p>有了如上理论，我们来找一次比赛实践一下。我们假设参赛的选手以基本的动态规划，搜索，和例如强连通分支，最短路等基础的图论技巧以及比较熟练的程序实践基础。</p>
+<h2 id="应用-noi2008-day1">应用 NOI2008 Day1</h2>
+<p>首先审题，第一道是 party，利用标记的方法发现题目要求先输出大的再输出小的，并加以符号标明。然后是 design，审题的时候发现题目有加粗的字体，马上关注，经过思考发现是一棵树。首先发现可以搜索，能够拿到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>20</mn></mrow><annotation encoding="application/x-tex">20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span> 分，但是数据提示标准算法是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>N</mi><mi>log</mi><mo>⁡</mo><mi>N</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(N \log N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> 级别的。最后一题 employee，题目很清楚，发现有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>30</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">30\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的数据规模很小。</p>
+<p>开始思考，首先是 party。可以想到，题目与最大公约数和最小公倍数有关，但是没有明确的想法。思考用搜索来解决这个题目，发现似乎可以通过搜索的方法来确定面具种类。发现数据中说明 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">50\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的数据可以用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>N</mi><mi>M</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(NM)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span> 的算法解决，于是想到可以暴力枚举答案。深入思考可以发现我们并不需要知道面具具体的种类，而只要知道相对关系即可，于是可以在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>M</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span> 的时间内进行答案可行性判断，总的复杂度恰好为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>N</mi><mi>M</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(NM)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span>。</p>
+<p>接着转到 design，根据树的性质发现是树形动态规划，但是似乎有难度，而且由于需要枚举孩子的选择情况，只想到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>N</mi><mn>4</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(N^4)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 复杂度的算法，可以拿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>30</mn><mo>∼</mo><mn>40</mn></mrow><annotation encoding="application/x-tex">30 \sim 40</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">0</span></span></span></span> 分左右。继续思考如何优化，但是发现此题思考时间已经半个小时了，立刻停止，迅速转到下一题。</p>
+<p>经过深入思考，感觉 employee 可能和网络流有关系，但是自己不会，迅速放弃。此时时间过去一个半小时。</p>
+<p>开始决策，觉得 employee 写暴力搜索会比较好写，于是花半个小时写 employee 的搜索，经过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span> 分钟的测试，发现通过。然后开始写 party 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">50\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的算法，写程序花了近 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>40</mn></mrow><annotation encoding="application/x-tex">40</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">0</span></span></span></span> 分钟，手动测试 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>20</mn></mrow><annotation encoding="application/x-tex">20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span> 分钟，发现正确。</p>
+<p>时间还剩两个小时不到，仔细回顾一下 design 的决策方程，觉得时间不允许自己想出更好的算法了，思考 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>20</mn></mrow><annotation encoding="application/x-tex">20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span> 分钟，考虑周全后开始写程序，写了一个小时，并测试 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>20</mn></mrow><annotation encoding="application/x-tex">20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span> 分钟后通过。时间还剩半个小时不到，检查各道题目，并最后将 employee 加了一个剪枝条件。</p>
+<p>测试得分 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn><mo>+</mo><mn>40</mn><mo>+</mo><mn>30</mn><mo>=</mo><mn>120</mn></mrow><annotation encoding="application/x-tex">50+40+30=120</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">2</span><span class="mord">0</span></span></span></span> 分，比较理想。</p>
+<h2 id="day2">Day2</h2>
+<p>第一题 trans 发现描述很麻烦，花了比较多的时间看，进行标记，着重看这句话：“从任何物流基站都可将物资运往控制基站”，经过分析，发现控制基站必然在环上。但是并没有发现什么好性质，但看到测试数据的条件列的很清晰，应该可以拿到几个特殊数据的分数。第二题 candy，是数据结构，暴力似乎可以拿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>30</mn></mrow><annotation encoding="application/x-tex">30</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">0</span></span></span></span> 分左右的分数。最后一题提交答案题 match，题目描述很清晰，但是求期望自己不大会，应该可以利用提供的评分程序 match_check 用类似测试自己程序的写 C++ 脚本程序的方式来帮助自己的随机化程序计算。</p>
+<p>开始思考，先看情况最多的 trans。发现目标函数可以用高斯消元法列方程求解，但是似乎复杂度过高，而自己思考一段时间后并没有得到好的方法。通过观察数据发现，task <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 规模小可以直接枚举，task <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 直接解方程即可，由于之前审题发现控制基站在环上，因此 task <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> 和 test <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span> 也可以通过枚举和解方程来解决。总的来说，这道题代码量比较大，但是能拿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>40</mn></mrow><annotation encoding="application/x-tex">40</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">0</span></span></span></span> 分的分数。然后是 candy，想了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>15</mn></mrow><annotation encoding="application/x-tex">15</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">5</span></span></span></span> 分钟没有什么好的想法，决定采用得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>30</mn></mrow><annotation encoding="application/x-tex">30</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">0</span></span></span></span> 分的替代算法。最后是 match，想到是提交答案的题目，于是打开数据观察，发现 task <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">1,2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span></span></span></span> 可以暴力搜索，task <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn><mo separator="true">,</mo><mn>8</mn><mo separator="true">,</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">6,8,9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">8</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">9</span></span></span></span> 似乎有规律，于是开始分析，但是发现快半个小时了，并没有得到什么好的结论。时间过去一个半小时，开始制定策略。</p>
+<p>由于提交答案题的前两个数据的搜索程序最简单，很快写好并开始了搜索。然后考虑到随机化是提交答案题的通用方法而且也比较好写，于是很快写了一个非常暴力的随机比赛排列顺序的随机化程序。此时时间过去 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 个多小时。</p>
+<p>开始写第一题的高斯消元法，由于高斯消元法本身并不难写，程序的嵌套也只是复制而已。写程序用去 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>40</mn></mrow><annotation encoding="application/x-tex">40</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">0</span></span></span></span> 分钟左右，手动 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span> 分钟测试高斯消元函数，测试完毕后写随机程序继续测试高斯消元函数是否正确——检测的方法很简单，把解得的解代回原方程计算即可。</p>
+<p>时间还剩不到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 个小时。开始写 candy 的暴力程序，发现比较复杂，但是还是能够调试成功，由于程序比较直接，静态查错并手动测试程序正确性。</p>
+<p>时间还剩 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 个小时，最后回顾一下 candy 和 trans 两道题目，然后开始查看提交答案题随机化程序生成的解答，最后逐一利用 match_check 检验完毕。考试结束前再次检查文件名数组大小等关键环节，最后提交。测试结果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>40</mn><mo>+</mo><mn>30</mn><mo>+</mo><mn>60</mn><mo>=</mo><mn>130</mn></mrow><annotation encoding="application/x-tex">40+30+60=130</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">3</span><span class="mord">0</span></span></span></span>。</p>
+<p>最终，加上笔试 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn></mrow><annotation encoding="application/x-tex">100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span> 分，总分 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>350</mn></mrow><annotation encoding="application/x-tex">350</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">5</span><span class="mord">0</span></span></span></span> 分，获得金牌第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>18</mn></mrow><annotation encoding="application/x-tex">18</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">8</span></span></span></span> 名，进入国家集训队。</p>
+<p>不难看出，其实水平并不需要超强，只要不犯错误，不留遗憾，一个有一定算法基础和代码能力的选手也能够进入国家集训队——虽然排名不是很高。</p>
+<h1 id="总结">总结</h1>
+<p>说了这么多，还是得说：文中所说的策略也好，方法也好，只能是告别遗憾，而不能迎接惊喜。</p>
+<p>所谓遗憾，就是说对于一定的水平，没有能够发挥出来，没有得到这样水平应该得到的肯定，这样的情况才叫遗憾，而如果没有能够想到某种算法，或者别人超常发挥了，而我没有，别人想到了怪异的方法拿了高分，而我没有，其实这不能算遗憾，因为我发挥出了水平，而别人是超水平发挥。</p>
+<p>比赛最重要的还是实力，要有一颗平常心，要正确的认识自己，超水平发挥要靠运气，机遇等等许多因素，可遇而不可求——我想休斯顿火箭的球迷肯定赞同我这样说法：你必须要求 T-mac 每场比赛拿下两双，但是你绝对不能奢求 T-mac 在火箭每次落后的时候都上演 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>35</mn></mrow><annotation encoding="application/x-tex">35</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">5</span></span></span></span> 秒 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>13</mn></mrow><annotation encoding="application/x-tex">13</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">3</span></span></span></span> 分的奇迹——事实也是这样：T-mac 只得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 分之后遭到了无数的批评，而当年姚明倒下，T-mac 一个人与爵士众将缠斗，最终火箭失败后，T-mac 并没有得到太多的责备——当然，不会有别人来怪罪我们，只有我们自己的内心会留下深深的遗憾。</p>
+<p>考场上要做到正常发挥，不留遗憾，一定要做到专注。</p>
+<p>吴沛凡在 NOI2008 就因为过份的考虑升学问题而留下无尽的遗憾，他后来说道：“什么心态会出现浮动？为什么细节会出错？这都是由于对自己的怀疑引起的。因为怀疑自己的实力，所以心不定；因为怀疑自己的能力，所以才对细节不自信。考场上我的想法其实是完全不必要的，而且由于出现在考场上更加影响了我的发挥。”</p>
+<p>陈明骋在 NOI2006 后曾留下豪情的感叹：“人家爱考多少考多少，我在进行精彩的个人表演。”是啊，我们都在进行着精彩的个人表演，走到这里，无论成败，不都是要为自己而鼓掌的么？</p>
+<p>很多的时候我们因为未来的未知而焦躁，而紧张，而烦忧，不能回避，只能直面。也许，那会产生很多的害怕和胆怯。笔者的一个老师曾对笔者说过：“未来永远是未知的，如果因为未来的未知而恐惧，那么就不断的问自己我到底恐惧什么，问到自己哑口无言的时候，自己就会得到释然。”</p>
+<p>再次引用陈明骋的话：“竞争中的人，总会遇到“不能失败”的仗。这时候，责任心会催发你的斗志。我觉得，这比在心理上回避比赛后果的严重性要好。我经常在 NOIP 之后的选拔中发挥大失水准，就是因为我一直想靠主观回避比赛后果的严重性来换取心态的轻松。其实，这是不可取的。难道直面世界很困难吗？”是的，难道真的那么困难么？心态这个东西是如此的复杂，以至于笔者不能再多说些什么了。</p>
+<p>笔者执笔此文，就想总结笔者自己和前辈的错误与经验来帮助更多的人，让更多的人引以为戒，在脑子空白的时候，不至于不知所措；让大家多琢磨琢磨这些经验的东西，感悟那些和这些话；让大家在将来的比赛中发挥出水平。希望此文，不再让以后的人们无所适从，不再让以后的人们抱憾，能让以后的人们每次比赛都能发挥水平，能够真正的告别遗憾。</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://yjh965.github.io/post/valuable-de-dp-and-ji-shu/">
+              <h3 class="post-title">
+                下一篇：valuable 的 DP &amp; 计数
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">菜</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://yjh965.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

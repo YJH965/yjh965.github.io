@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>CF59C Title 题解 | 菜王的 blog</title>
+<meta name="description" content="菜">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://yjh965.github.io/favicon.ico?v=1769938565157">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://yjh965.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://yjh965.github.io">
+        <img class="avatar" src="https://yjh965.github.io/images/avatar.png?v=1769938565157" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://yjh965.github.io">
+        <h1 class="site-title">菜王的 blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://YJH965.github.io" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://YJH965.github.io/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://www.luogu.com.cn/user/477443" class="menu" target="_blank">
+            My Luogu
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://codeforces.com/profile/YuJiahe" class="menu" target="_blank">
+            My CodeForces
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="https://atcoder.jp/users/YuJiahe" class="menu" target="_blank">
+            My AtCoder
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">CF59C Title 题解</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2023-04-16</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://yjh965.github.io/tag/snS5DT8z2/">
+                    杂物
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://yjh965.github.io/tag/LQ0w-t_P69/">
+                    题解
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <h1 id="思路">思路</h1>
+<p>一道较水的模拟题。</p>
+<p>首先，我们输入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 和字符串后，设置一个变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">wh</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">h</span></span></span></span> 代表不确定的问号对的数量，设置一个 <code>bool</code> 类型的数组 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mi>i</mi><msub><mi>s</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">vis_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80952em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord mathdefault">i</span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 标记每个字母有没有出现过，然后用一个循环从字符串的两端向中间搜起，（代码里有）然后，如果搜到的两个字符不相同且不是 <code>?</code>，直接输出 <code>IMPOSSIBLE</code>。如果两个字符一个是 <code>?</code>，一个是字母，就把 <code>?</code> 这个字符设置成字母，顺便用 <code>vis[i] = 1</code> 标记这个字母出现过。如果两个字符都是相同的字母，也要标记哦！如果两个字符都是 <code>?</code>，则 <code>wh ++</code>，统计问号对出现的次数。</p>
+<p>这样先把字符串能填的都填上，再统计一下有多少个字母没有出现过。</p>
+<pre><code class="language-cpp">int xy = 0;
+for (int i = 0;i &lt; k;i ++) xy += !vis[i];
+</code></pre>
+<p>对于第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 到第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 个小写字母，每有一个没出现过，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 就加 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。</p>
+<p>我们又想到一种情况，如果可以用来填字母的问号对比没出现过的字母数还少，那肯定做不到让所有的字母起码出现一次，所以如果出现这种情况，也可以直接输出 <code>IMPOSSIBLE</code> 了！</p>
+<p>按照刚刚的定义，还有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">wh</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">h</span></span></span></span> 个不确定的问号对，和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 个没出现的字母，则有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi><mi>h</mi><mo>−</mo><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">wh-xy</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">h</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 个空闲的问号对。</p>
+<p>根据贪心思想，我们要把空闲的问号对都填上 <code>a</code>，再根据字典序的排序方法，我们应该在问号对上面优先填上 <code>a</code>，再填上需要的字母。假如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>，而字符串为 <code>a??????a</code>，则应输出 <code>aabccbaa</code>。这就可以保证 <code>a</code>，<code>b</code>，<code>c</code> 各出现至少一次而且字典序最小。</p>
+<p>那要在什么情况下再填需要的字母呢？当然要在没有空闲问号对的情况下填了！</p>
+<p>这样，问题就迎刃而解了！</p>
+<h1 id="代码">代码</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+string s;
+int n, wh, xy;
+char yt;
+bool vis[26];
+int main(){
+	cin &gt;&gt; n &gt;&gt; s;
+	for (int l = 0, r = s.size() - 1;!(r &lt; l);r --, l ++){ // 定义左点和右点并向中间移动
+		if (s[l] != '?' &amp;&amp; s[r] != '?' &amp;&amp; s[l] != s[r]){ // 都是字母且不相等
+			cout &lt;&lt; &quot;IMPOSSIBLE&quot;;
+			return 0;
+		}
+		if (s[l] == s[r]){ // 相等
+			if (s[l] == '?') wh ++; // 都是问号则统计问号对
+			else vis[s[l] - 'a'] = 1; // 都是字母则统计字母
+		}
+		else { // 不相等
+			if (s[l] == '?') s[l] = s[r]; // 左问号右字母
+			else s[r] = s[l]; // 相反
+			vis[s[l] - 'a'] = 1; // 统计字母
+		}
+	}
+	for (int i = 0;i &lt; n;i ++) xy += !vis[i]; // 统计未出现的字母
+	if (wh &lt; xy){ // 问号对不够
+		cout &lt;&lt; &quot;IMPOSSIBLE&quot;;
+		return 0;
+	}
+	for (int l = 0, r = s.size() - 1;!(r &lt; l);r --, l ++){
+		yt = 'a'; // 先设置为 'a'
+		if (s[l] == '?'){ // 发现问号对
+			if (wh &lt;= xy){ // 不能填 'a' 了
+				int i;
+				for (i = 0;i &lt; n &amp;&amp; vis[i];i ++) yt ++; // 找到第一个没出现过的字母
+				vis[i] = 1; // 标记为出现过
+			}
+			else wh --; // 可以填 'a'，空闲的问号对 - 1
+			s[l] = s[r] = yt; // 把两个问号设置成字母
+		}
+	}
+	cout &lt;&lt; s; // 输出字符串
+}
+</code></pre>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://yjh965.github.io/post/mu-cai-cang-ku-ti-jie/">
+              <h3 class="post-title">
+                下一篇：木材仓库 题解
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">菜</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://yjh965.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
